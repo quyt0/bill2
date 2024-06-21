@@ -1,0 +1,44 @@
+#info div,
+#reader
+{
+    margin-bottom: 20px;
+}
+
+#info div label
+{
+    font-size: 30px;
+}
+
+#info div input,
+#nh
+{
+    height: 50px;
+    font-size: 40px;
+    width: 90%
+}
+
+#btns button
+{
+    width: 120px;
+    height: 100px;
+    font-size: 20px
+}
+
+#html5-qrcode-button-camera-permission,
+#html5-qrcode-button-camera-start,
+#html5-qrcode-button-camera-stop
+{
+    height: 70px;
+    width: 130px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    font-size: 18px;
+}
+
+#html5-qrcode-select-camera
+{
+    height: 50px;
+}
