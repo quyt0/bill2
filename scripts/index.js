@@ -1,3 +1,14 @@
+var loader = new PxLoader();
+var logo_arr = [];
+
+for (var i = 0; i < banks.length; i++) 
+{
+  logo_arr[i] = loader.addImage('./logos/' + banks[i].bin + '.png');
+}
+
+loader.start();
+
+
 class Qr {
 	static PREFIX = '000201010212';
 	static SUFFIX = '6304';
@@ -127,12 +138,15 @@ function Create() {
       // Logo based on width of NH + STK
       var textWidth = context.measureText(nh).width;
       var imageX = 540 - textWidth / 2 - 54 - 2.5;
-      base_image = new Image();
       var logonh = document.getElementById('nh').value;
-      base_image.src = "logos/" + logonh + ".png";
-      base_image.onload = function(){
-        context.drawImage(base_image, imageX, 1000);
-      }
+      for (let i = 0; i < banks.length; i++)
+        {
+          if (banks[i].bin == logonh)
+          {
+            context.drawImage(logo_arr[i], imageX, 1000);
+            break;
+          }
+        }
 
       // Ten nguoi chuyen khoan
       context.font = "39px averta_std_cyregular";

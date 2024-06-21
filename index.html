@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hông phải MBBank</title>
+    <script type="text/javascript" src="./scripts/PxLoader.js"></script>
+    <script type="text/javascript" src="./scripts/PxLoaderImage.js"></script> 
     <link rel="stylesheet" href="./fonts/stylesheet.css">
-    <script src="html5-qrcode.js" type="text/javascript"></script>
+    <script src="./scripts/html5-qrcode.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="pre-load" style="display: none;">
+            <div style="font-family: averta_std_cysemibold;">Font preload</div>
+            <div style="font-family: averta_std_cyregular;">Font preload</div>
+        </div>
         <div id="app">
             <div id="reader" width="100%"></div>
-            <div style="font-family: averta_std_cysemibold; font-size: 1px; color: white;">Font preload</div>
-            <div style="font-family: averta_std_cyregular; font-size: 1px; color: white;">Font preload</div>
             <div id="info">
                 <div>
                     <label for="stk">Số tài khoản:</label>
@@ -42,8 +46,8 @@
 
             <canvas id="canvas" width="1080" height="2400"></canvas>
         </div>
-        <script src="index.js"></script>
-        <script src="banks.js"></script>
-        <script src="uit_member.js"></script>
+        <script src="./scripts/banks.js"></script>
+        <script src="./scripts/uit_member.js"></script>
+        <script src="./scripts/index.js"></script>
 </body>
 </html>
