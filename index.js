@@ -63,8 +63,6 @@ class Qr {
 }
 
 function onScanSuccess(decodedText) {
-    // handle the scanned code as you like, for example:
-    //alert(`Code matched = ${decodedText}`);
     var qr_text = String(decodedText);
     var qr_res = Qr.decoder(qr_text);
     document.getElementById('stk').value = qr_res.bankAccount;
@@ -80,8 +78,6 @@ function onScanSuccess(decodedText) {
   }
   
 function onScanFailure(error) {
-  // handle scan failure, usually better to ignore and keep scanning.
-  // for example:
   console.warn(`Code scan error = ${error}`);
 }
   
@@ -91,44 +87,28 @@ let html5QrcodeScanner = new Html5QrcodeScanner(
   /* verbose= */ false);
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
-function make_base()
-{
-  var canvas = document.getElementById("canvas");
-  var context = canvas.getContext("2d");
-  base_image = new Image();
-  var logonh = document.getElementById('nh').value;
-  base_image.src = "logos/" + logonh + ".png";
-  context.fillStyle = '#FFFFFF';
-  context.fillRect(100, 780, 60, 60);
-  base_image.onload = function(){
-    context.drawImage(base_image, 275, 1000);
-  }
-}
-
-
 function Create() {
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
   var imageObj = new Image();
   imageObj.onload = function(){
       context.drawImage(imageObj, 0, 0);
-      const d = new Date();
-      let hour = addZero(d.getHours());
-      let minute = addZero(d.getMinutes());
-      let second = addZero(d.getSeconds());
-      let day = addZero(d.getDate());
-      let month = addZero(d.getMonth() + 1);
-      let year = d.getFullYear();
+
+      // So tien
       context.font = "81px averta_std_cysemibold";
       context.fillStyle = "#131fd3";
       context.textAlign = "center";
       var money = document.getElementById("st").value + "000";
       context.fillText(money.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " VND", 540, 650.25);
+
+      // Chu tai khoan
       context.font = "47px averta_std_cysemibold";
       context.fillStyle="#2e2e2e"
       context.textAlign = "center";
       var ctk = document.getElementById("ctk").value;
       context.fillText(ctk.toUpperCase(), 540, 954);
+
+      // Ngan hang + STK
       context.font = "39px averta_std_cyregular";
       var stk = document.getElementById("stk").value;
       var nh = document.getElementById("nh").value;
@@ -143,6 +123,18 @@ function Create() {
       nh += " - " + stk;
       context.fillStyle="#1d2b36";
       context.fillText(nh, 580, 1040);
+
+      // Logo based on width of NH + STK
+      var textWidth = context.measureText(nh).width;
+      var imageX = 540 - textWidth / 2 - 54 - 2.5;
+      base_image = new Image();
+      var logonh = document.getElementById('nh').value;
+      base_image.src = "logos/" + logonh + ".png";
+      base_image.onload = function(){
+        context.drawImage(base_image, imageX, 1000);
+      }
+
+      // Ten nguoi chuyen khoan
       context.font = "39px averta_std_cyregular";
       var nameid = getRandomInt(0, 8754);
       var namestr = removeVietnameseTones(namedat[nameid].full_name).toString().toUpperCase();
@@ -152,12 +144,6 @@ function Create() {
       context.fillText(namestr, 540, 1120);
   };
   imageObj.src = "template.jpg";
-  make_base();
-}
-
-function addZero(i) {
-  if (i < 10) {i = "0" + i}
-  return i;
 }
 
 function removeVietnameseTones (str) {
