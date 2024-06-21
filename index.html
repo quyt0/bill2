@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div id="reader" width="100%"></div>
+            <div id="info">
+                <div style="padding-bottom: 20px;">
+                    <label for="stk" style="font-size: 30px;">Số tài khoản:</label>
+                    <input type="text" id="stk" style="height: 50px; font-size: 40px; width: 90%;">
+                </div>
+                <div style="padding-bottom: 20px;">
+                    <label for="ctk" style="font-size: 30px;">Chủ tài khoản:</label>
+                    <input type="text" id="ctk" style="height: 50px; font-size: 40px; width: 90%">
+                </div>
+                <div style="padding-bottom: 20px;">
+                    <label for="nh" style="font-size: 30px;">Ngân hàng:</label>
+                    <select id="nh" style="height: 50px; font-size: 40px; width: 90%" required></select>
+                </div>
+                <div style="padding-bottom: 20px;">
+                    <label for="st" style="font-size: 30px;">Số tiền chuyển (nghìn đồng):</label>
+                    <input type="text" id="st" style="height: 50px; font-size: 40px; width: 90%">
+                </div>
+                <div style="padding-bottom: 20px;">
+                    <label for="nc" style="font-size: 30px;">Người chuyển:</label>
+                    <input type="text" id="nc" style="height: 50px; font-size: 40px; width: 90%">
+                </div>
+                <div class="btns">
+                    <button onclick="Create()" style="width: 200px; height: 200px; font-size: 40px;">Create</button>
+                    <button onclick="make_base()" style="width: 200px; height: 200px; font-size: 40px;">Fix</button>
+                    <button onclick="DownloadCanvasAsImage()" style="width: 200px; height: 200px; font-size: 40px;">Download</button>
+                </div>
+            </div>
+
+            <canvas id="canvas" width="1080" height="2400"></canvas>
+        </div>
+        <script src="index.js"></script>
+        <script src="banks.js"></script>
+        <script src="uit_member.js"></script>
+</body>
+</html>
