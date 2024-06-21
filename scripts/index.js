@@ -82,6 +82,10 @@ function onScanSuccess(decodedText) {
       if (banks[i].bin == qr_res.bankId)
       {
         document.getElementById('nh').value = banks[i].bin;
+        if (qr_res.amount != 0)
+        {
+          document.getElementById('st').value = qr_res.amount / 1000;
+        }
         document.getElementById('html5-qrcode-button-camera-stop').click();
         break;
       }
