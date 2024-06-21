@@ -98,8 +98,8 @@ function Create() {
       context.font = "81px averta_std_cysemibold";
       context.fillStyle = "#131fd3";
       context.textAlign = "center";
-      var money = document.getElementById("st").value + "000";
-      context.fillText(money.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + " VND", 540, 650.25);
+      var money = document.getElementById("st").value * 1000;
+      context.fillText(money.toLocaleString().replaceAll(".", ",") + " VND", 540, 650.25);
 
       // Chu tai khoan
       context.font = "47px averta_std_cysemibold";
