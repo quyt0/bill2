@@ -152,16 +152,44 @@ function Create() {
           }
         }
 
-      // Ten nguoi chuyen khoan
+      // Ten nguoi chuyen khoan / noi dung
       context.font = "39px averta_std_cyregular";
+      context.fillStyle = "#172b34";
       var nameid = getRandomInt(0, 8754);
       var namestr = removeVietnameseTones(namedat[nameid].full_name).toString().toUpperCase();
       var name_custom = document.getElementById("nc").value;
       if (name_custom != '') namestr = name_custom.toUpperCase();
       namestr += " chuyen tien";
-      context.fillText(namestr, 540, 1120);
+
+      var nd = document.getElementById("nd").value;
+      if (nd == '')
+      {
+        context.fillText(namestr, 540, 1120);
+      }
+      else context.fillText(nd, 540, 1120);
+
+      // Ngay gio + pin
+      const d = new Date();
+      let hour = addZero(d.getHours());
+      let minute = addZero(d.getMinutes());
+      let second = addZero(d.getSeconds());
+      let day = addZero(d.getDate());
+      let month = addZero(d.getMonth() + 1);
+      let year = d.getFullYear();
+      let battery = getRandomInt(35, 45);
+      let dateck = `${hour}:${minute} - ${day}/${month}/${year}`;
+      
+      context.fillStyle = "#fff";
+      context.font = "38px samsung_sans_regular";
+      context.fillText(hour + ":" + minute, 119, 73);
+      context.fillText(battery, 926, 73);
+
+      context.fillStyle = "#656366";
+      context.font = "39px averta_std_cyregular";
+      context.fillText(dateck, 542, 728);
   };
   imageObj.src = "template.jpg";
+  //imageObj.src = "temp2.jpg";
 }
 
 function removeVietnameseTones (str) {
@@ -196,4 +224,9 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
 }
