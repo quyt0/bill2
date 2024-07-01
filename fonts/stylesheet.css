@@ -2,35 +2,14 @@
 
 @font-face {
     font-family: 'averta_std_cyregular';
-    src: url('intelligent_design_-_avertastdcy-regular_3-webfont.woff') format('woff');
+    src: url('Avertastdcy-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'averta_std_cysemibold';
-    src: url('intelligent_design_-_avertastdcy-semibold_1-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'samsung_sans_bold';
-    src: url('SamsungSans-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'samsung_sans_light';
-    src: url('SamsungSans-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'samsung_sans_medium';
-    src: url('SamsungSans-Medium.woff') format('woff');
+    src: url('Avertastdcy-Semibold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,13 +17,6 @@
 @font-face {
     font-family: 'samsung_sans_regular';
     src: url('SamsungSans-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'samsung_sans_thin';
-    src: url('SamsungSans-Thin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
