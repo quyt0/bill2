@@ -1,7 +1,8 @@
 # Bill 2 - Fake bank transfer bills
 
 A simple website that uses JS to create fake bank transfer bills.
-Warning: Do not use for malicious purposes
+
+**Warning**: Do not use for malicious purposes
 
 ## Installation
 
