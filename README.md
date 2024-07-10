@@ -4,9 +4,11 @@ A simple website that uses JS to create fake bank transfer bills.
 
 **Warning**: Do not use for malicious purposes
 
-## Installation
+## About this webpage
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+This is a website whose title says it all. However, just for reference and caution purposes only.
+
+The author will not be responsible for any actions with bad intentions (if any) such as fraud, forgery, etc. by you.
 
 ```bash
 pip install foobar
