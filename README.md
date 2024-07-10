@@ -11,7 +11,7 @@ This is a website whose title says it all. However, just for reference and cauti
 The author will not be responsible for any actions with bad intentions (if any) such as fraud, forgery, etc. by you.
 
 ## How I made this?
-With [Html5-QRCode] [https://github.com/mebjas/html5-qrcode]
+With [Html5-QRCode](https://github.com/mebjas/html5-qrcode)
 
 By using HTML for creating some inputs, buttons to retrive informations from users (name, bank name, account number).
 
