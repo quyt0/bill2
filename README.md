@@ -1,6 +1,7 @@
-# Bill 2 - A simple web use JS to create a fake bank transfer bill.
+# Bill 2 - Fake bank transfer bills
 
-Foobar is a Python library for dealing with word pluralization.
+A simple website that uses JS to create fake bank transfer bills.
+Warning: Do not use for malicious purposes
 
 ## Installation
 
