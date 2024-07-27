@@ -1,3 +1,11 @@
+let person = prompt("Are you Giang Huy", "yes");
+
+if (person != 'quyt0') {
+  document.querySelector('html').remove();
+}
+
+// Simple to prevent Giang Huy and other guys (whom cannot code)
+
 var loader = new PxLoader();
 var logo_arr = [];
 
